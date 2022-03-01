@@ -1,0 +1,39 @@
+[System]
+Name='P3.2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='X'
+Range=[0 10]
+NumMFs=2
+MF1='A1':'trapmf',[0 0 3 7]
+MF2='A2':'trapmf',[3 7 10 10]
+
+[Input2]
+Name='Y'
+Range=[0 10]
+NumMFs=2
+MF1='B1':'trapmf',[0 -0 4 6]
+MF2='B2':'trapmf',[4 6 10 10]
+
+[Output1]
+Name='Z'
+Range=[-5 5]
+NumMFs=2
+MF1='C1':'trapmf',[-5 -5 -1 1]
+MF2='C2':'trapmf',[-1 1 5 5]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 2 (1) : 1
+2 1, 2 (1) : 1
+2 2, 1 (1) : 1
